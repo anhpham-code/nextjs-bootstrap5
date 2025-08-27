@@ -3,6 +3,8 @@ import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import BootstrapProvider from "./providers/BootstrapProvider";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <BootstrapProvider>{children}</BootstrapProvider>
+        <BootstrapProvider>
+          <Navbar />
+          <main className="container py-5">{children}</main>
+          <Footer />
+        </BootstrapProvider>
       </body>
     </html>
   );
